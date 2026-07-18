@@ -1,0 +1,210 @@
+/* ===========================
+   Lumalia Link
+   Style officiel
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#0d1117;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* ===========================
+   Fond
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,#4f46e5 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
+        #0d1117;
+    z-index:-2;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(80px);
+}
+
+/* ===========================
+   Carte
+=========================== */
+
+.container{
+    width:min(90%,700px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+    border-radius:24px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    animation:fadeUp .8s ease;
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo{
+    width:110px;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.logo:hover{
+    transform:rotate(8deg) scale(1.05);
+}
+
+/* ===========================
+   Texte
+=========================== */
+
+h1{
+    font-size:42px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+p{
+    color:#c8d1dc;
+    margin-bottom:35px;
+    line-height:1.7;
+}
+
+/* ===========================
+   Barre de recherche
+=========================== */
+
+.search-box{
+    display:flex;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.search-box input{
+    flex:1;
+    padding:16px 20px;
+    border:none;
+    border-radius:14px;
+    background:#161b22;
+    color:white;
+    outline:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 0 3px rgba(79,70,229,.35);
+}
+
+.search-box button{
+    padding:16px 26px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    font-weight:600;
+    transition:.25s;
+}
+
+.search-box button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(79,70,229,.4);
+}
+
+/* ===========================
+   Liens populaires
+=========================== */
+
+.examples h2{
+    margin-bottom:18px;
+    font-size:22px;
+}
+
+.examples{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.examples a{
+    color:#9fb8ff;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.examples a:hover{
+    color:white;
+    transform:translateX(6px);
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    position:fixed;
+    bottom:25px;
+    color:#8b949e;
+    font-size:14px;
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:700px){
+
+    .container{
+        padding:30px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box button{
+        width:100%;
+    }
+
+}
